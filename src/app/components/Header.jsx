@@ -21,6 +21,8 @@ import Link from 'next/link';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { useTheme } from 'next-themes';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
+import { dark, light } from '@clerk/themes'
 
 // usePathname используется для /about /contacts и тд
 // usePathname будет подкрашивать в навигации шапки кнопку на которую кликнули
@@ -73,13 +75,52 @@ export default function Header() {
                 </Button>
 
 
-                <Link href='/sign-in'>
+                {/* <Link href='/sign-in'>
                     <Button gradientDuoTone='purpleToBlue' outline>
                         Sign In
                     </Button>
-                </Link>
+                </Link> */}
+
+
+                <SignedIn>
+                    <UserButton
+                        appearance={{
+                            baseTheme: theme === 'light' ? light : dark,
+                        }}
+                        userProfileUrl='/dashboard?tab=profile'
+                    />
+                </SignedIn>
+                <SignedOut>
+                    <Link href='/sign-in'>
+                        <Button gradientDuoTone='purpleToBlue' outline>
+                            Sign In
+                        </Button>
+                    </Link>
+                </SignedOut>
+
+
+                {/* <SignedIn>
+                    <UserButton
+                        appearance={{
+                            baseTheme: theme === 'light' ? light : dark,
+                        }}
+                        userProfileUrl='/dashboard?tab=profile'
+                    />
+                </SignedIn>
+                <SignedOut>
+
+                    <Button gradientDuoTone='purpleToBlue' outline>
+                        <SignInButton />
+                    </Button>
+                    {/* <SignUpButton /> 
+                </SignedOut> */}
+
+
+
+
 
                 <Navbar.Toggle />
+
             </div>
 
             <Navbar.Collapse>
