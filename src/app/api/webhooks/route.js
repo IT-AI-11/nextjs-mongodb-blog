@@ -92,6 +92,7 @@ export async function POST(req) {
               isAdmin: user.isAdmin,
             },
           });
+          
         } catch (error) {
           console.log('Error updating user metadata:', error);
         }
