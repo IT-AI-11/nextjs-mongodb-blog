@@ -19,6 +19,7 @@
 
 
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+//import { auth } from "@clerk/nextjs/server";
 
 // все что внутри /dashboard будет protected
 const isProtectedRoute = createRouteMatcher(['/dashboard(.*)'])

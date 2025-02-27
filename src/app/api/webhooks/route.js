@@ -41,11 +41,12 @@ export async function POST(req) {
 
   // Verify payload with headers
   try {
-    evt = wh.verify(body, {
+    evt = wh.verify(body, { // my await ===================================
       'svix-id': svix_id,
       'svix-timestamp': svix_timestamp,
       'svix-signature': svix_signature,
     })
+
   } catch (err) {
     console.error('Error: Could not verify webhook:', err)
     return new Response('Error: Verification error', {
@@ -92,11 +93,12 @@ export async function POST(req) {
               isAdmin: user.isAdmin,
             },
           });
-          
+
         } catch (error) {
           console.log('Error updating user metadata:', error);
         }
       }
+
     } catch (error) {
       console.log('Error creating or updating user:', error);
       return new Response('Error occured', {
