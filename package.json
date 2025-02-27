@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.12.0",
+    "@clerk/nextjs": "^5.7.5",
     "@clerk/themes": "^2.2.19",
     "flowbite-react": "^0.10.2",
     "mongodb": "^6.13.1",
