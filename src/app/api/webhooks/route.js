@@ -83,6 +83,7 @@ export async function POST(req) {
           // через metadata 
           // 1:48:00 min обьяснил он
           await clerkClient.users.updateUserMetadata(id, {
+            // см. в Clerk > Users > Metadata > public ( в нем данные пользователя/user из MongoDB Atlas ) 
             publicMetadata: {
               userMongoId: user._id,
               isAdmin: user.isAdmin,
