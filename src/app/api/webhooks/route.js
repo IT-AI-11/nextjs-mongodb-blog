@@ -7,7 +7,7 @@ import { headers } from 'next/headers'
 //import { WebhookEvent } from '@clerk/nextjs/server'
 
 export async function POST(req) {
-    
+
   const SIGNING_SECRET = process.env.SIGNING_SECRET
 
   if (!SIGNING_SECRET) {
@@ -59,11 +59,11 @@ export async function POST(req) {
 
 
   if (evt.type === 'user.created') {
-    console.log('userId:', evt.data.id)
+    console.log('userId777:', evt.data.id)
   }
 
   if (evt.type === 'user.updated') {
-    console.log('user updated', evt.data.id)
+    console.log('user updated444', evt.data.id)
   }
 
 
