@@ -60,6 +60,8 @@ export async function POST(req) {
 
   if (evt.type === 'user.created') {
     console.log('userId777:', evt.data.id)
+    console.log(`Received webhook with ID ${id} and event type of ${eventType}`)
+    console.log('Webhook payload:', body)
   }
 
   if (evt.type === 'user.updated') {
